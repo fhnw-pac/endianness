@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 union byteAccessor
 {
     uint8_t arr[4];
@@ -16,10 +14,10 @@ void printBytesInMemoryOrder(uint32_t i) {
     byteAccessor ba;
     ba.ui = i;
 
-    cout << "input in hex: " << hex << uppercase << (int)i << dec << endl;
+    std::cout << "input in hex: " << std::hex << std::uppercase << (int)i << std::dec << std::endl;
 
     for (int i = 0; i < sizeof(ba); ++i) {
-        cout << "byte " << i << ": " << std::hex << uppercase << (int)ba.arr[i] << endl;
+        std::cout << "byte " << i << ": " << std::hex << std::uppercase << (int)ba.arr[i] << std::endl;
     }
 }
 
@@ -34,8 +32,8 @@ int toBig(uint32_t i)
 int main()
 {
     uint32_t test = 0x0A0B0C0D;
-    cout << "little endian" << endl;
+    std::cout << "little endian" << std::endl;
     printBytesInMemoryOrder(test);
-    cout << endl << "big endian (will be interpreted wrong - because x86 is a little endian machine)" << endl;
+    std::cout << std::endl << "big endian (will be interpreted wrong - because x86 is a little endian machine)" << std::endl;
     printBytesInMemoryOrder(test = toBig(test));
 }
