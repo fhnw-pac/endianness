@@ -22,7 +22,7 @@ void printBytesInMemoryOrder(uint32_t i) {
 }
 
 /*
-    input is little endian (DCBA), convert to little endian (ABCD)
+    input is little endian (DCBA), convert to big endian (ABCD)
 */
 int toBig(uint32_t i)
 {
