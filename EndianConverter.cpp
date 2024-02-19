@@ -26,6 +26,7 @@ void printBytesInMemoryOrder(uint32_t i) {
 */
 int toBig(uint32_t i)
 {
+    throw "not implemented";
     return 0;
 }
 
